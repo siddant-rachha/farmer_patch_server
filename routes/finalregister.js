@@ -1,4 +1,5 @@
 const FinalRegister = require("../models/FinalRegister.js");
+const InitialRegister = require("../models/IntialRegister.js");
 
 const router = require("express").Router();
 
@@ -22,7 +23,7 @@ router.post("/", async (req, res) => {
         const update = { FirstTimeLogin: "N" };
 
         // `doc` is the document _before_ `update` was applied
-        let doc = await Character.findOneAndUpdate(filter, update);
+        let doc = await InitialRegister.findOneAndUpdate(filter, update);
 
 
         return res.status(201).json(savedFinalRegister);
