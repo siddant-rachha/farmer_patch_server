@@ -18,7 +18,7 @@
 
 	<script>
 		async function sendPostRequest() {
-			const url = "http://localhost:5000/otp/getotp"; // replace with your API endpoint
+			const url = "https://farmer-patch-server.onrender.com/otp/getotp"; // replace with your API endpoint
 			const email = document.getElementById("email").value;
 			const data = { email: email };
 			const response = await fetch(url, {
