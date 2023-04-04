@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Send POST Request</title>
+</head>
+<body>
+	<form id="myForm" onsubmit="sendPostRequest(); return false;">
+		<label for="email">Enter your email:</label>
+		<input type="email" id="email" name="email"><br><br>
+		<input type="submit" value="Submit">
+	</form>
+
+	<label for="email">Valid for 15 mins</label>
+	<input type="text" id="response" name="response" readonly>
+
+	<script>
+		async function sendPostRequest() {
+			const url = "http://localhost:5000/otp/getotp"; // replace with your API endpoint
+			const email = document.getElementById("email").value;
+			const data = { email: email };
+			const response = await fetch(url, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json"
+				},
+				body: JSON.stringify(data)
+			});
+			const jsonResponse = await response.json();
+			document.getElementById("response").value = jsonResponse;
+		}
+	</script>
+</body>
+</html>
