@@ -16,7 +16,7 @@ const app = express();
 
 app.use(cors());
 
-const jsonParser = bodyParser.json();
+const jsonParser = bodyParser.json({limit: "50mb"});
 app.use(jsonParser)
 
 app.use("/test",(req,res)=>{return res.send("test")})

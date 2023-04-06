@@ -15,9 +15,9 @@ const finalRegisterSchema = new Schema({
     SurveyorId: { type: String, required: true },
     Gender: { type: String, required: true},
     GovtIdType: { type: String, required: true},
-    GovtIdValue: { type: String, required: true},
+    GovtIdValue: { type: String},
     PrimaryMobileNo: { type: String, required: true},
-    SecondaryMobileNo: { type: String, required: true},
+    SecondaryMobileNo: { type: String},
     Education: { type: String, required: true },
 
     Occuption: { type: String, required: true},
